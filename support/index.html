@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="zh-Hans">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ashling support and FAQ / Ashling 客服与常见问题">
+  <title>Ashling Support · 客服支持</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --background: #fffdf7;
+      --surface: #f6f0e6;
+      --text: #26211a;
+      --muted: #5a4f42;
+      --border: #d6c9b8;
+      --link: #6b4a18;
+      --focus: #a44909;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #171310;
+        --surface: #241d17;
+        --text: #f4ece1;
+        --muted: #d9cfc2;
+        --border: #55483b;
+        --link: #f6c685;
+        --focus: #ffd79a;
+      }
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font: 1rem/1.65 system-ui, -apple-system, "Segoe UI", sans-serif;
+    }
+
+    main {
+      width: min(100% - 2.5rem, 40rem);
+      margin: 0 auto;
+      padding: 3rem 0 4rem;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+    }
+
+    h1,
+    h2 {
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
+    h1 {
+      margin: 0 0 .75rem;
+      font-size: clamp(2rem, 7vw, 2.75rem);
+    }
+
+    h2 {
+      margin-top: 2.75rem;
+      padding-bottom: .5rem;
+      border-bottom: 1px solid var(--border);
+      font-size: clamp(1.5rem, 5vw, 1.875rem);
+    }
+
+    h3 {
+      margin: 0;
+      font-size: 1.125rem;
+    }
+
+    p {
+      margin: .75rem 0 0;
+    }
+
+    .language-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      color: var(--muted);
+    }
+
+    .intro {
+      max-width: 35rem;
+      color: var(--muted);
+    }
+
+    section {
+      padding: 1.5rem;
+      margin-top: 1.5rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 1rem;
+    }
+
+    details {
+      padding: 1rem;
+      background: var(--background);
+      border: 1px solid var(--border);
+      border-radius: .75rem;
+    }
+
+    details + details {
+      margin-top: .75rem;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 650;
+    }
+
+    summary:focus-visible,
+    a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 3px;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration-thickness: .1em;
+    }
+
+    .contact {
+      margin-top: 1.5rem;
+    }
+
+    .email {
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 375px) {
+      main {
+        width: min(100% - 1.75rem, 40rem);
+        padding-top: 2.25rem;
+      }
+
+      section {
+        padding: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <h1>Ashling</h1>
+      <nav aria-label="Language / 语言">
+        <ul class="language-links">
+          <li><a href="#zh">中文</a></li>
+          <li><a href="#en">English</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <section id="zh" lang="zh-Hans" aria-labelledby="zh-title">
+      <h2 id="zh-title">客服支持</h2>
+      <p class="intro">遇到问题可以先看下面几条。如果这里没有答案，请写信给我们，我们会尽快回复。</p>
+
+      <div class="faq">
+        <details>
+          <summary>怎么恢复购买？</summary>
+          <p>打开 Ashling，进入「设置 → 购买」，点「恢复购买」。系统可能会要求你登录当时购买使用的 Apple 账号。恢复后，沙漏专注和苔藓罐盖会回到原来的状态。</p>
+        </details>
+        <details>
+          <summary>步数为什么不动？</summary>
+          <p>先确认 iPhone 是否支持 Apple 健康，并在系统「设置 → 隐私与安全性 → 健康」里允许 Ashling 读取步数。如果系统权限没有打开，小家伙会继续留在岛上玩，不会扣掉任何进度。你也可以在 Ashling 的设置里打开系统健康权限页面。</p>
+        </details>
+        <details>
+          <summary>怎么关闭提醒？</summary>
+          <p>可以在 Ashling 的「设置 → 提醒」里关闭每日提醒；也可以到系统「设置 → 通知 → Ashling」关闭通知。关闭提醒不会影响游戏进度。</p>
+        </details>
+      </div>
+
+      <h3 class="contact">联系我们</h3>
+      <p>邮箱：<a class="email" href="mailto:support@example.com">support@example.com</a></p>
+    </section>
+
+    <section id="en" lang="en" aria-labelledby="en-title">
+      <h2 id="en-title">Support</h2>
+      <p class="intro">Start with the questions below. If your answer isn’t here, write to us and we’ll help as soon as we can.</p>
+
+      <div class="faq">
+        <details>
+          <summary>How do I restore a purchase?</summary>
+          <p>Open Ashling, go to Settings → Purchases, then tap Restore purchases. The system may ask you to sign in with the Apple Account used for the original purchase. Afterward, the hourglass focus session and the moss jar lid will be available again.</p>
+        </details>
+        <details>
+          <summary>Why isn’t the step count moving?</summary>
+          <p>First check that your iPhone supports Apple Health and that Ashling has permission to read steps in system Settings → Privacy &amp; Security → Health. If permission is off, the little friend still stays on the island and nothing is lost. You can also open the system Health permission page from Ashling’s settings.</p>
+        </details>
+        <details>
+          <summary>How do I turn off reminders?</summary>
+          <p>You can turn off daily reminders in Ashling under Settings → Reminders, or turn off notifications in system Settings → Notifications → Ashling. Turning reminders off does not affect your progress.</p>
+        </details>
+      </div>
+
+      <h3 class="contact">Contact us</h3>
+      <p>Email: <a class="email" href="mailto:support@example.com">support@example.com</a></p>
+    </section>
+  </main>
+</body>
+</html>
