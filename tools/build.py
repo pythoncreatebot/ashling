@@ -280,7 +280,7 @@ def page(lang: str) -> str:
     ) + f'\n  <link rel="alternate" hreflang="x-default" href="{SITE}">'
 
     lang_links = "\n".join(
-        f'        <li><a href="{up}{DIR[l]}" hreflang="{HTML_LANG[l]}" lang="{HTML_LANG[l]}"'
+        f'        <li><a href="{(up + DIR[l]) or './'}" hreflang="{HTML_LANG[l]}" lang="{HTML_LANG[l]}"'
         + (' aria-current="page"' if l == lang else "")
         + f'>{LANG_NAME[l]}</a></li>'
         for l in LANGS
