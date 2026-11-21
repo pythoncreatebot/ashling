@@ -10,6 +10,7 @@ On launch day put the App Store link in APP_STORE_URL below and run this again.
 The "coming soon" label turns into a real download button on all four pages.
 """
 
+import hashlib
 from html import escape
 from pathlib import Path
 
@@ -256,6 +257,11 @@ ICONS = {
 }
 
 
+def v(rel: str) -> str:
+    """Version tag for an asset, so browsers fetch the new file after an update."""
+    return hashlib.sha256((ROOT / "assets" / rel).read_bytes()).hexdigest()[:8]
+
+
 def e(s: str) -> str:
     return escape(s, quote=True)
 
@@ -356,7 +362,7 @@ def page(lang: str) -> str:
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" type="image/png" href="{a}icon/favicon-64.png">
   <link rel="apple-touch-icon" href="{a}icon/apple-touch-icon.png">
-  <link rel="stylesheet" href="{a}site.css">
+  <link rel="stylesheet" href="{a}site.css?v={v("site.css")}">
 {redirect}</head>
 <body>
   <header class="top">
@@ -384,7 +390,7 @@ def page(lang: str) -> str:
       </div>
       <figure class="hero-media">
         <div class="jar-frame">
-          <video class="jar-video" src="{a}media/jar-day.mp4" poster="{a}media/jar-day-poster.webp" width="640" height="800" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+          <video class="jar-video" src="{a}media/jar-day.mp4?v={v("media/jar-day.mp4")}" poster="{a}media/jar-day-poster.webp?v={v("media/jar-day-poster.webp")}" width="640" height="800" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
         </div>
         <figcaption>{e(t["hero_cap"])}</figcaption>
       </figure>
@@ -396,7 +402,7 @@ def page(lang: str) -> str:
         <p>{e(t["meet_p"])}</p>
       </div>
       <figure class="trailer">
-        <video src="{a}media/trailer.mp4" poster="{a}media/trailer-poster.webp" width="540" height="960" controls playsinline preload="none" aria-label="{e(t["trailer"])}"></video>
+        <video src="{a}media/trailer.mp4?v={v("media/trailer.mp4")}" poster="{a}media/trailer-poster.webp?v={v("media/trailer-poster.webp")}" width="540" height="960" controls playsinline preload="none" aria-label="{e(t["trailer"])}"></video>
         <figcaption>{e(t["trailer"])}</figcaption>
       </figure>
     </section>
